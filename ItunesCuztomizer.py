@@ -50,10 +50,10 @@ def Carpeta_Fondos_Creador(modo):
     data = Load_Config()
 
     if modo == "Funcion1":
-        Rut = dato["Ruta"][1]
+        Rut = dato["Rutas"][1]
         existe = "FondoDePantallaIMG"
     elif modo == "Funcion2":
-        Rut = dato["Ruta"][0]
+        Rut = dato["Rutas"][0]
         existe = "FondoDePantallaVideo"
 
     carpetaRutaVerificador = data.get(existe, ["false"])[0].lower() == "true"
@@ -75,9 +75,9 @@ def Guardar_IMGMP4(modo, ruta):
     Carpeta_Fondos_Creador(modo)
 
     if modo == "Funcion1":
-        Rut = dato["Ruta"][1]
+        Rut = dato["Rutas"][1]
     elif modo == "Funcion2":
-        Rut = dato["Ruta"][0]
+        Rut = dato["Rutas"][0]
 
     nombre = os.path.basename(ruta)
     ruta_destino = os.path.join(Rut, nombre)
