@@ -56,8 +56,7 @@ def Carpeta_Fondos_Creador(modo):
         Rut = dato["Rutas"][0]
         existe = "FondoDePantallaVideo"
 
-    carpetaRutaVerificador = data.get(existe, ["false"])[0].lower() == "true"
-    if carpetaRutaVerificador:
+    if data[existe][0] == "false":
         partes = Rut.strip("/").split("/")
         ruta_actual = ""
         for carpeta in partes:
